@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Plants Disease</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+  <h1>Plants Disease</h1>
+  <form  method="post" enctype="multipart/form-data" action="{% url 'predict' %}">
+    {% csrf_token %}
+    <input type="file" name="image">
+    <input type="submit" value="Predict">
+  </form>
+ <!--- {% if class %} -->
+  <h2>class: {{ class }}</h2>
+  <h2>confidence: {{ confidence }}</h2>
+
+  <!-- {% endif %} 
+</body>
+</html>
